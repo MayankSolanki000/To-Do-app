@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="app-container" role="main">
+        <div class="header">
+            <h1>To-Do List</h1>
+            <button id="theme-toggle-btn" aria-label="Switch to light mode">
+                <span id="theme-icon">☀️</span>
+            </button>
+        </div>
+        <form id="task-form" role="form" aria-labelledby="form-heading">
+             <h2 id="form-heading" class="visually-hidden">Add a new task</h2>
+            <input type="text" id="task-input" placeholder="Add a new task..." aria-label="New task input" required>
+            <input type="date" id="task-due-date" aria-label="Task due date">
+            <input type="time" id="task-due-time" aria-label="Task due time">
+            <button type="submit" aria-label="Add task">Add</button>
+        </form>
+
+        <div class="tasks-container">
+            <div class="tasks-header">
+                <h2 class="section-title">Remaining Tasks</h2>
+                <button id="sort-due-date-btn" aria-label="Sort tasks by due date">Sort by Date 📅</button>
+            </div>
+            <ul id="task-list" aria-live="polite"></ul>
+            
+            <h2 class="section-title">Completed Tasks</h2>
+            <ul id="completed-task-list" aria-live="polite"></ul>
+        </div>
+        
+        <div class="trash-container">
+            <div class="trash-header">
+                <h2 class="section-title">Trash</h2>
+                <button id="empty-trash-btn" aria-label="Empty the trash">Empty Trash</button>
+            </div>
+            <ul id="trash-list"></ul>
+        </div>
+    </div>
+
+    <div id="undo-alert" class="undo-alert" role="alert" aria-live="assertive">
+        <span id="undo-message"></span>
+        <button id="undo-btn">Undo</button>
+    </div>
+
+    <script type="module" src="index.js"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
